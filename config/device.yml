@@ -1,0 +1,5 @@
+Andriod:
+  platformName: Andriod
+  deviceName: '172.19.81.132:7501'
+  appPackage: 'com.hexin.plat.android'
+  appActivity: ''
