@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
--------------------------------------------------
-   File Name：conftest.py
-   Description :
-   Author : chenqiyue
-   CreateDate：2023/04/03
-   用例id:
-------------------------------------------------
-"""
+
 import pytest
 
 from airtest.core.api import *
@@ -20,6 +12,8 @@ from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 def poco():
     print("连接安卓设备")
     connect_device("Android:///")
+
+    # 初始化一个poco对象
     poco_obj = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
     yield poco_obj
 

@@ -19,9 +19,11 @@ from common.app_operation import stop_app_open_app, back_findelement
 from common.function import myFindElements, homePageFindElements
 from poco.exceptions import PocoNoSuchNodeException
 from airtest.core.api import touch, sleep
+from common.login import login_by_password
 
 
-@pytest.fixture(scope="function", autouse=True)
+
+@pytest.fixture(scope="module", autouse=True)
 def test_setup(poco):
     print("手机连接成功,进行初始化准备`")
     # 获取当前文件所在目录的路径
@@ -144,3 +146,8 @@ def test_setup(poco):
         # homePageFindElements(hangqing, 2, poco)
         # if not hangqing.exists():
         #     back_findelement(hangqing)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def test_loginin(poco):
+    login_by_password('slf1994', 'sns654321', 'com.hexin.plat.android', poco)
