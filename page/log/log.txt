@@ -1,0 +1,2 @@
+{"tag": "function", "depth": 1, "time": 1728992094.5394447, "data": {"name": "connect_device", "call_args": {"uri": "android:///"}, "start_time": 1728992092.38261, "ret": "<Android '172.19.81.132:7589'>", "end_time": 1728992094.5394447}}
+{"tag": "function", "depth": 1, "time": 1728992096.3996403, "data": {"name": "connect_device", "call_args": {"uri": "Android:///"}, "start_time": 1728992094.540453, "ret": "<Android '172.19.81.132:7589'>", "end_time": 1728992096.3996403}}
