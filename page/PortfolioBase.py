@@ -13,8 +13,8 @@ class PortfolioPage:
     product_labels = poco(text="长线抓涨停准")
 
     # 组合分享按钮
-    share_button = poco("android.view.ViewGroup").click()
-    cancel_btn = poco("com.hexin.plat.android:id/cancel_btn").click()
+    share_button = poco("android.view.ViewGroup")
+    cancel_btn = poco("com.hexin.plat.android:id/cancel_btn")
 
     # 投顾信息以及群信息
     avater = product_labels.parent().child()[5]
@@ -29,7 +29,7 @@ class PortfolioPage:
     groupchildren = group_info.children()
     group_name = groupchildren[1]
     group_text = groupchildren[3]
-    print(group_text.get_text())
+    #print(group_text.get_text())
 
     # 滑动屏幕
     poco.swipe([0.5, 0.5], [0.5, 0.3], duration=0.5)
@@ -42,7 +42,7 @@ class PortfolioPage:
     totalIncomeRate = introduce.parent().child()[5]
     dailyIncomeRate = introduce.parent().child()[7]
     maxDrawdownRate = introduce.parent().child()[9]
-    PortfolioIncomeInfo = introduce.sibling()[12]
+    PortfolioIncomeInfo = introduce.parent().child()[12]
     change_Income = poco(text="近半年")
 
     # 滑动屏幕
@@ -51,7 +51,7 @@ class PortfolioPage:
     #  组合持仓
     Relocatelist = poco(textMatches="查看全部.*只")
     Relocatelist1 = Relocatelist.parent().parent().child()[18]
-    print(Relocatelist1.get_text())
+    #print(Relocatelist1.get_text())
     industry_info_chart = Relocatelist.parent().parent().child()[19]
     industry_info_data = Relocatelist.parent().parent().child()[20]
     bestRelocate = Relocatelist.parent().parent().child()[21]

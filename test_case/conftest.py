@@ -40,7 +40,7 @@ def test_setup(poco):
     device().wake()  # 唤醒屏幕
     clear_app("com.hexin.plat.android")
     start_app("com.hexin.plat.android", activity="LogoEmptyActivity")
-    sleep(10.0)
+    sleep(5.0)
 
     # 点击同意按钮
     # agree_button = myFindElements("同意", 4, poco)
@@ -133,6 +133,10 @@ def test_setup(poco):
     close_button = poco("com.hexin.plat.android:id/close_button")
     if close_button.exists():
         close_button.click()
+
+    # 处理新手开户弹窗24-11-7
+
+
     # image_template = Template(r"tpl1720858284488.png")
     # if exists(image_template):
     #     print("存在下一步弹窗，重启APP")
@@ -147,7 +151,3 @@ def test_setup(poco):
         # if not hangqing.exists():
         #     back_findelement(hangqing)
 
-
-@pytest.fixture(scope="module", autouse=True)
-def test_loginin(poco):
-    login_by_password('slf1994', 'sns654321', 'com.hexin.plat.android', poco)
