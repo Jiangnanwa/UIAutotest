@@ -133,8 +133,13 @@ def test_setup(poco):
     close_button = poco("com.hexin.plat.android:id/close_button")
     if close_button.exists():
         close_button.click()
+    sleep(3)
 
     # 处理新手开户弹窗24-11-7
+
+    # 处理新股批量申购弹窗
+    if poco(text="新股批量申购").exists():
+        poco("com.hexin.plat.android:id/close_button").click()
 
 
     # image_template = Template(r"tpl1720858284488.png")

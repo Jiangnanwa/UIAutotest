@@ -4,21 +4,16 @@ from time import sleep
 from common.open_product import Open_product
 
 def test_cancel_subscribe(poco):
-    Open_product(poco,"https://t.10jqka.com.cn/pkgfront/tgService.html?type=portfolio&id=8317")
+    Open_product(poco,"https://t.10jqka.com.cn/pkgfront/tgService.html?type=package&packageid=5212")
     try:
-        poco(text="加群通知").wait_for_appearance(timeout=20)
-        poco(text="稍后再去").click()
+        poco(text="已订阅").wait_for_appearance(timeout=20)
+        poco(text="已订阅").click()
+        poco(text="确定").click()
     except Exception as e:
-        print(e, "没有加群弹窗")
-    else:
-        try:
-            poco(text="已订阅").wait_for_appearance(timeout=20)
-            poco(text="已订阅").click()
-            poco(text="确定").click()
-        except Exception as e:
-            print(e, "未订阅")
+        print(e, "未订阅")
     finally:
         sleep(3)
+        assert poco(text="订阅").exists()
 
 def test_subscribe(poco):
     try:
